@@ -67,6 +67,7 @@ public class PokerHub extends Hub {
 			else if (((Action) message).getAction() == eAction.Sit)
 			{
 				HubPokerTable.AddPlayerToTable(((Action) message).getPlayer()); 
+				resetOutput();
 				sendToAll(HubPokerTable);
 			}
 
@@ -75,7 +76,10 @@ public class PokerHub extends Hub {
 			//TODO: If Action = Leave, remove the player from the table
 			else if (((Action) message).getAction() == eAction.Leave)
 			{
+				Table.StateOfTable(HubPokerTable);
 				HubPokerTable.RemovePlayerFromTable(((Action) message).getPlayer());
+				Table.StateOfTable(HubPokerTable);
+				resetOutput();
 				sendToAll(HubPokerTable);
 				
 			}

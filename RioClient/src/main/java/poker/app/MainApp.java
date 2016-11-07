@@ -239,7 +239,7 @@ public class MainApp extends Application {
 		 * what should happen to that the message.
 		 * 
 		 * If it's a Table, handle Table - level action
-		 * If it's a GamePlay, handle GamePlay - level action
+		 * If it's a GamePlay, handle GamePlay - level action - ask about. Lab 6
 		 */
 		@Override
 		protected void messageReceived(final Object message) {
@@ -255,8 +255,9 @@ public class MainApp extends Application {
 					//TODO: If the message is a Table, run the 
 					//		method Handle_TableState in the 
 					//		pokerController.
+					pokerController.Handle_TableState((Table)message);
 				}
-				pokerController.MessageFromMainApp((String)message);
+			
 			});
 		}
 		
