@@ -146,6 +146,7 @@ public class PokerTableController implements Initializable {
 		// The Table was updated, you just have to refresh the
 		// UI controls to show the current state of the
 		// Table object
+		/** Ask Vinay About this*/
 		Iterator it = HubPokerTable.getHashPlayers().entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry) it.next();
